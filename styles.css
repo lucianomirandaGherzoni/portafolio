@@ -114,7 +114,7 @@ section {
 
 .seccion-introduccion {
     min-height: 100vh;
-    padding-top: 0;
+    padding-top: 2rem;
 }
 
 .seccion-trabajo, .seccion-contacto {
@@ -956,6 +956,32 @@ section.animar-aparecer {
   color: var(--texto-principal);
 }
 
+.boton-whatsapp-flotante {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--duracion-transicion);
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.boton-whatsapp-flotante:hover {
+  transform: scale(1.1);
+}
+
+.boton-whatsapp-flotante svg {
+  width: 2rem;
+  height: 2rem;
+  color: white;
+}
+
 /* ==========================================================================
    Media Queries (Centralizados al final)
    ========================================================================== */
@@ -964,10 +990,8 @@ section.animar-aparecer {
 @media (min-width: 640px) {
   
   .overlay-blur {
-      /* Escritorio: Vuelve al tamaño grande */
-      background: radial-gradient(circle 50vmax at 30% 30%, 
-                  var(--blur-color) 0%, 
-                  transparent 50%);
+      /* Desactivado */
+      display: none;
   }
 
   .contenedor-principal {
