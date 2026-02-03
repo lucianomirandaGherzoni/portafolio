@@ -1,0 +1,92 @@
+{
+  "usuario": {
+    "nombre": "Luciano",
+    "apellido": "Miranda",
+    "titulo": "Desarrollador Full Stack",
+    "descripcionCorta": "Desarrollador Full Stack con experiencia práctica en la planificación, diseño, desarrollo e implementación de software.",
+    "estado": "Disponible para trabajar",
+    "ubicacion": "Córdoba, Argentina",
+    "actividadActual": {
+      "rol": "Analista en Sistemas & Desarrollador (Tesis)",
+      "empresa": "IES Siglo 21",
+      "periodo": "2023 — Presente"
+    },
+    "contactoEmail": "lucianogherzonimiranda@gmail.com",
+    "enfoqueHabilidades": [
+      "REACT JS",
+      "NODE.JS",
+      "EXPRESS",
+      "SUPABASE",
+      "C# (.NET)",
+      "GSAP",
+      "JAVASCRIPT",
+      "HTML",
+      "CSS"
+    ]
+  },
+  "proyectos": [
+    {
+      "id": "barberia",
+      "año": "2025",
+      "rol": "Barberia ELEVÉ (Tesis)",
+      "empresa": "Plataforma Web Integral",
+      "descripcion": "Desarrollo de una plataforma web con panel de gestión y sistema de turnos, optimizando la administración del negocio.",
+      "tipo": "academico",
+      "tecnologias": ["Node.js", "Express", "Supabase", "MercadoPago (API)"],
+      "url": "https://eleve-barberia.vercel.app/"
+    },
+    {
+      "id": "tarjeta-casamiento",
+      "año": "2025",
+      "rol": "Invitación Digital",
+      "empresa": "Invitación Web Interactiva",
+      "descripcion": "Creación de una tarjeta de invitación web con confirmación de asistencia, facilitando la recopilación de datos (Google Sheets API).",
+      "tipo": "real",
+      "tecnologias": ["Node.js", "Express", "Google Sheets API", "SEO"],
+      "url": "https://demo-invitacion-01.vercel.app/"
+    },
+    {
+      "id": "ciclic",
+      "año": "2025",
+      "rol": "CICLIC",
+      "empresa": "Landing Page con Animaciones",
+      "descripcion": "Diseño y desarrollo de una landing page con animaciones modernas y formularios de contacto, usando Google Sheets para información dinámica.",
+      "tipo": "real",
+      "tecnologias": ["GSAP", "Node.js", "Express", "Google Sheets API"],
+      "url": "https://www.ciclic.ar/"
+    },
+    {
+      "id": "neloworks",
+      "año": "2024",
+      "rol": "NELOWORKS",
+      "empresa": "Tienda Online",
+      "descripcion": "Desarrollo de una tienda online, con integración de MercadoPago y sistema de notificaciones por email.",
+      "tipo": "real",
+      "tecnologias": ["React JS", "Firebase", "Node.js", "MercadoPago"],
+      "url": "https://neloworks.com/"
+    },
+    {
+      "id": "software-rrhh",
+      "año": "2024",
+      "rol": "SOFTWARE RRHH (Backend)",
+      "empresa": "Gestión Educativa",
+      "descripcion": "Lideré el desarrollo del backend de un software de gestión de RRHH en un entorno educativo, logrando un sistema robusto y eficiente.",
+      "tipo": "academico",
+      "tecnologias": ["C#", "Entity Framework", "SQL Lite"]
+    }
+  ],
+  "estudios": [
+    {
+      "titulo": "Analista de Sistemas y Desarrollo de Software",
+      "institucion": "IES SIGLO 21",
+      "periodo": "2023 - 2025",
+      "descripcion": "Formación integral en análisis, diseño y desarrollo de software."
+    },
+    {
+      "titulo": "Desarrollador Full Stack",
+      "institucion": "CODERHOUSE",
+      "periodo": "2022 - 2023",
+      "descripcion": "Certificación enfocada en tecnologías web modernas (Frontend y Backend)."
+    }
+  ]
+}
