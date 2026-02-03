@@ -5,6 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-id="titulo-web">Luciano Miranda - Desarrollador Full Stack</title>
   <meta name="description" content="Desarrollador Full Stack con sólida formación y experiencia en la planificación, diseño, desarrollo e implementación de software.">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lucianomiranda.site/">
+  <meta property="og:title" content="Luciano Miranda - Desarrollador Full Stack">
+  <meta property="og:description" content="Desarrollador Full Stack con sólida formación y experiencia en la planificación, diseño, desarrollo e implementación de software.">
+  <meta property="og:image" content="https://lucianomiranda.site/img/previsualizacion.png">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://lucianomiranda.site/">
+  <meta property="twitter:title" content="Luciano Miranda - Desarrollador Full Stack">
+  <meta property="twitter:description" content="Desarrollador Full Stack con sólida formación y experiencia en la planificación, diseño, desarrollo e implementación de software.">
+  <meta property="twitter:image" content="https://lucianomiranda.site/img/previsualizacion.png">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23000'/%3E%3Ctext x='20' y='28' font-family='system-ui' font-size='20' font-weight='700' fill='%23fff' text-anchor='middle'%3ELM%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
@@ -25,6 +41,7 @@
             <a href="#tecnologias" class="enlace-nav">Stack</a>
             <a href="#estudios" class="enlace-nav">Estudios</a>
             <a href="#contacto" class="enlace-nav">Contacto</a>
+            <a href="https://drive.google.com/drive/folders/1d3MZshHaQlaf7J0WL3StgxmL0PpLqV1T?usp=drive_link" target="_blank" rel="noopener noreferrer" class="enlace-nav">CV</a>
             <button id="alternarTema" class="boton-icono-nav" aria-label="Alternar tema">
                 <svg id="iconoSol" fill="currentColor" viewBox="0 0 20 20" style="display: none;">
                   <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/>
@@ -45,7 +62,7 @@
       <div class="grid-intro">
         <div class="contenido-intro">
           <div class="cabecera-intro">
-            <div class="etiqueta">PORTAFOLIO / 2025</div>
+            <div class="etiqueta">PORTAFOLIO / 2026</div>
             <h1 class="titulo">
               <span data-id="nombre-usuario">Luciano</span>
               <span class="titulo-mutado" data-id="apellido-usuario">Miranda</span>
@@ -64,6 +81,13 @@
               </div>
               <div data-id="ubicacion-usuario">Córdoba, Argentina</div>
             </div>
+
+            <a href="https://drive.google.com/drive/folders/1d3MZshHaQlaf7J0WL3StgxmL0PpLqV1T?usp=drive_link" target="_blank" rel="noopener noreferrer" class="boton-cv-hero">
+              Ver Curriculum
+              <svg viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" stroke-width="1.5">
+                <path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+              </svg>
+            </a>
           </div>
         </div>
 
@@ -72,8 +96,10 @@
             <div class="etiqueta">ACTUALMENTE</div>
             <div class="contenido-lateral">
               <div class="titulo-lateral" data-id="rol-actual">Analista en Sistemas & Desarrollador (Tesis)</div>
-              <div class="subtitulo-lateral" data-id="empresa-actual">@ IES Siglo 21</div>
-              <div class="subtitulo-lateral">@ Coderhouse</div>
+              <div class="empresas-lateral">
+                <a href="https://ies21.edu.ar/" target="_blank" rel="noopener noreferrer" class="subtitulo-lateral" data-id="empresa-actual">@ IES Siglo 21</a>
+                <a href="https://www.coderhouse.com" target="_blank" rel="noopener noreferrer" class="subtitulo-lateral">@ Coderhouse</a>
+              </div>
               <div class="meta-lateral" data-id="periodo-actual">2023 — Presente</div>
             </div>
           </div>
@@ -83,6 +109,21 @@
             <div class="contenedor-habilidades" id="contenedorHabilidades">
               </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="acerca" class="seccion-acerca">
+      <div class="contenido-acerca">
+        <div class="info-acerca">
+          <div class="etiqueta">ACERCA DE MÍ</div>
+          <h2 class="titulo-seccion">Un poco sobre mí</h2>
+          <p class="texto-acerca" data-id="acerca-de-mi">
+            Recién graduado como Analista en Sistemas, cuento con una sólida formación como desarrollador Full Stack y experiencia práctica en la planificación, diseño, desarrollo e implementación de software. Me motiva participar en proyectos desafiantes que me permitan seguir creciendo profesionalmente y aportar soluciones de valor.
+          </p>
+        </div>
+        <div class="imagen-acerca">
+          <img src="img/perfil.jpeg" alt="Luciano Miranda" class="foto-perfil">
         </div>
       </div>
     </section>

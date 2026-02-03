@@ -4,12 +4,13 @@
     "apellido": "Miranda",
     "titulo": "Desarrollador Full Stack",
     "descripcionCorta": "Desarrollador Full Stack con experiencia práctica en la planificación, diseño, desarrollo e implementación de software.",
+    "acercaDeMi": "Recién graduado como Analista en Sistemas, cuento con una sólida formación como desarrollador Full Stack y experiencia práctica en la planificación, diseño, desarrollo e implementación de software. Me motiva participar en proyectos desafiantes que me permitan seguir creciendo profesionalmente y aportar soluciones de valor.",
     "estado": "Disponible para trabajar",
-    "ubicacion": "Córdoba, Argentina",
+    "ubicacion": "Córdoba | Bariloche, Argentina",
     "actividadActual": {
-      "rol": "Analista en Sistemas & Desarrollador (Tesis)",
+      "rol": "Analista en Sistemas & Desarrollador Web",
       "empresa": "IES Siglo 21",
-      "periodo": "2023 — Presente"
+      "periodo": "2022 — Presente"
     },
     "contactoEmail": "lucianogherzonimiranda@gmail.com",
     "enfoqueHabilidades": [
