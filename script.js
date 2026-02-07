@@ -89,9 +89,6 @@ const GestorDatos = (() => {
         const div = document.createElement('div');
         div.classList.add('tarjeta-tecnologia');
         div.innerHTML = `
-            <svg class="icono-tecnologia" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-            </svg>
             ${habilidad}
         `;
         return div;
@@ -103,26 +100,38 @@ const GestorDatos = (() => {
   };
 
 
+  let paginaActual = 1;
+  const proyectosPorPagina = 3;
+
   /**
    * Renderiza la lista de proyectos, aplicando un filtro opcional.
    */
-  const renderizarProyectos = (proyectos, filtroActivo = 'todos') => {
+  const renderizarProyectos = (proyectos, filtroActivo = 'todos', pagina = 1) => {
     const lista = document.getElementById('listaProyectos');
     if (!lista) return;
 
+    paginaActual = pagina;
     lista.innerHTML = ''; 
 
     const proyectosFiltrados = proyectos.filter(proyecto => 
         filtroActivo === 'todos' || proyecto.tipo === filtroActivo
     );
 
+    // Ordenar por año (de más nuevo a más antiguo)
+    proyectosFiltrados.sort((a, b) => parseInt(b.año) - parseInt(a.año));
+
     if (proyectosFiltrados.length === 0) {
          lista.innerHTML = `<p class="texto-descripcion" style="text-align: center; padding: 2rem 0;">No se encontraron proyectos del tipo "${filtroActivo}".</p>`;
+         renderizarPaginacion(0, filtroActivo);
          return;
     }
 
+    // Calcular índices para la paginación
+    const inicio = (pagina - 1) * proyectosPorPagina;
+    const fin = inicio + proyectosPorPagina;
+    const proyectosPagina = proyectosFiltrados.slice(inicio, fin);
 
-    proyectosFiltrados.forEach(proyecto => {
+    proyectosPagina.forEach(proyecto => {
       const divItem = document.createElement('div');
       divItem.classList.add('item-trabajo');
       divItem.setAttribute('data-tipo', proyecto.tipo);
@@ -153,6 +162,62 @@ const GestorDatos = (() => {
       `;
 
       lista.appendChild(divItem);
+    });
+
+    // Renderizar la paginación
+    renderizarPaginacion(proyectosFiltrados.length, filtroActivo);
+  };
+
+  /**
+   * Renderiza los controles de paginación.
+   */
+  const renderizarPaginacion = (totalProyectos, filtroActivo) => {
+    const contenedor = document.getElementById('paginacionProyectos');
+    if (!contenedor) return;
+
+    const totalPaginas = Math.ceil(totalProyectos / proyectosPorPagina);
+
+    if (totalPaginas <= 1) {
+      contenedor.innerHTML = '';
+      return;
+    }
+
+    let html = '<div class="controles-paginacion">';
+
+    // Botón anterior
+    if (paginaActual > 1) {
+      html += `<button class="boton-pagina" data-pagina="${paginaActual - 1}" data-filtro="${filtroActivo}">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </button>`;
+    }
+
+    // Números de página
+    for (let i = 1; i <= totalPaginas; i++) {
+      html += `<button class="boton-pagina ${i === paginaActual ? 'activo' : ''}" data-pagina="${i}" data-filtro="${filtroActivo}">${i}</button>`;
+    }
+
+    // Botón siguiente
+    if (paginaActual < totalPaginas) {
+      html += `<button class="boton-pagina" data-pagina="${paginaActual + 1}" data-filtro="${filtroActivo}">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </button>`;
+    }
+
+    html += '</div>';
+    contenedor.innerHTML = html;
+
+    // Agregar event listeners
+    contenedor.querySelectorAll('.boton-pagina').forEach(boton => {
+      boton.addEventListener('click', () => {
+        const pagina = parseInt(boton.dataset.pagina);
+        const filtro = boton.dataset.filtro;
+        renderizarProyectos(proyectosOriginales, filtro, pagina);
+        window.scrollTo({ top: document.getElementById('trabajo').offsetTop - 80, behavior: 'smooth' });
+      });
     });
   };
 
@@ -198,8 +263,8 @@ const GestorDatos = (() => {
               });
               boton.classList.add('activo');
 
-              // Renderiza los proyectos con el filtro aplicado
-              renderizarProyectos(proyectosOriginales, filtro);
+              // Renderiza los proyectos con el filtro aplicado (reiniciando a página 1)
+              renderizarProyectos(proyectosOriginales, filtro, 1);
           }
       });
   };

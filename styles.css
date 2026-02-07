@@ -90,7 +90,7 @@ body::before {
    ========================================================================== */
 
 .contenedor-principal {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 1.5rem;
   position: relative;
@@ -190,6 +190,48 @@ section.animar-aparecer {
     color: var(--fondo);
     border-color: var(--texto-principal);
     font-weight: 500;
+}
+
+/* Controles de paginación */
+.controles-paginacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 3rem;
+}
+
+.boton-pagina {
+    min-width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+    border: 1px solid var(--borde);
+    border-radius: 0.5rem;
+    background-color: transparent;
+    color: var(--texto-mutado);
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 300ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boton-pagina:hover:not(.activo) {
+    border-color: var(--texto-mutado);
+    color: var(--texto-principal);
+    background-color: var(--fondo-secundario);
+}
+
+.boton-pagina.activo {
+    background-color: var(--texto-principal);
+    color: var(--fondo);
+    border-color: var(--texto-principal);
+    font-weight: 500;
+}
+
+.boton-pagina svg {
+    display: block;
 }
 
 /* ==========================================================================
@@ -610,7 +652,7 @@ section.animar-aparecer {
 }
 
 .titulo-seccion {
-  font-size: 1.875rem;
+  font-size: 1.75rem;
   font-weight: 500;
 }
 
@@ -1094,7 +1136,13 @@ section.animar-aparecer {
 /* Desktop y mayores (min-width: 1024px) */
 @media (min-width: 1024px) {
   .contenedor-principal {
-    padding: 0 4rem;
+    padding: 0 6rem;
+  }
+
+  .seccion-introduccion {
+    min-height: 85vh;
+    padding-top: 12rem;
+    align-items: flex-start;
   }
 
   .grid-intro {

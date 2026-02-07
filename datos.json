@@ -3,7 +3,7 @@
     "nombre": "Luciano",
     "apellido": "Miranda",
     "titulo": "Desarrollador Full Stack",
-    "descripcionCorta": "Desarrollador Full Stack con experiencia práctica en la planificación, diseño, desarrollo e implementación de software.",
+    "descripcionCorta": "Analista en sistemas y Desarrollador Web con experiencia práctica en la planificación, diseño, desarrollo e implementación de software.",
     "acercaDeMi": "Recién graduado como Analista en Sistemas, cuento con una sólida formación como desarrollador Full Stack y experiencia práctica en la planificación, diseño, desarrollo e implementación de software. Me motiva participar en proyectos desafiantes que me permitan seguir creciendo profesionalmente y aportar soluciones de valor.",
     "estado": "Disponible para trabajar",
     "ubicacion": "Córdoba | Bariloche, Argentina",
@@ -51,20 +51,60 @@
       "año": "2025",
       "rol": "CICLIC",
       "empresa": "Landing Page con Animaciones",
-      "descripcion": "Diseño y desarrollo de una landing page con animaciones modernas y formularios de contacto, usando Google Sheets para información dinámica.",
+      "descripcion": "Diseño y desarrollo de una landing page con animaciones modernas, panel administrador para gestionar contenido dinámico, base de datos Supabase y Google Sheets API para lista de suscriptores.",
       "tipo": "real",
-      "tecnologias": ["GSAP", "Node.js", "Express", "Google Sheets API"],
+      "tecnologias": ["GSAP", "Node.js", "Express", "Supabase", "Google Sheets API"],
       "url": "https://www.ciclic.ar/"
     },
     {
+      "id": "brcar",
+      "año": "2026",
+      "rol": "BRCAR",
+      "empresa": "Landing Page Rentadora de Autos",
+      "descripcion": "Rediseño de landing page para una rentadora de autos en Bariloche, mejorando la experiencia de usuario y diseño visual.",
+      "tipo": "real",
+      "tecnologias": ["HTML", "CSS", "JavaScript", "GSAP"],
+      "url": "https://brcar-landing.vercel.app/"
+    },
+    {
+      "id": "duplex-del-este",
+      "año": "2023",
+      "rol": "Duplex del Este",
+      "empresa": "Landing Page Inmobiliaria",
+      "descripcion": "Desarrollo de una landing page para promoción de departamentos, con diseño atractivo y formularios de contacto.",
+      "tipo": "real",
+      "tecnologias": ["HTML", "CSS", "JavaScript"],
+      "url": "https://duplexdeleste.vercel.app/"
+    },
+    {
+      "id": "berlini-pastas",
+      "año": "2026",
+      "rol": "Berlini Pastas App",
+      "empresa": "Sistema de Pedidos Online",
+      "descripcion": "Desarrollo de una web para pedidos de comida con panel administrador para gestión de productos y stock.",
+      "tipo": "real",
+      "tecnologias": ["React JS", "Node.js", "Express", "Supabase"],
+      "url": "https://www.berlinipastas.com/"
+    },
+    {
       "id": "neloworks",
-      "año": "2024",
+      "año": "2025",
       "rol": "NELOWORKS",
       "empresa": "Tienda Online",
       "descripcion": "Desarrollo de una tienda online, con integración de MercadoPago y sistema de notificaciones por email.",
       "tipo": "real",
       "tecnologias": ["React JS", "Firebase", "Node.js", "MercadoPago"],
       "url": "https://neloworks.com/"
+    },
+    {
+      "id": "kaimiloa",
+      "año": "2023",
+      "rol": "Kaimiloa Resto Bar",
+      "empresa": "Sistema de Pedidos Online",
+      "descripcion": "Desarrollo de una app de pedidos para resto bar en Brasil, con panel administrador para gestión de productos y stock.",
+      "tipo": "real",
+      "tecnologias": ["React JS", "Node.js", "Express", "Supabase"],
+      "url": "https://kaimiloa.vercel.app/"
     },
     {
       "id": "software-rrhh",
