@@ -1,133 +1,124 @@
 {
-  "usuario": {
-    "nombre": "Luciano",
-    "apellido": "Miranda",
-    "titulo": "Desarrollador Full Stack",
-    "descripcionCorta": "Analista en sistemas y Desarrollador Web con experiencia práctica en la planificación, diseño, desarrollo e implementación de software.",
-    "acercaDeMi": "Recién graduado como Analista en Sistemas, cuento con una sólida formación como desarrollador Full Stack y experiencia práctica en la planificación, diseño, desarrollo e implementación de software. Me motiva participar en proyectos desafiantes que me permitan seguir creciendo profesionalmente y aportar soluciones de valor.",
-    "estado": "Disponible para trabajar",
-    "ubicacion": "Córdoba | Bariloche, Argentina",
-    "actividadActual": {
-      "rol": "Analista en Sistemas & Desarrollador Web",
-      "empresa": "IES Siglo 21",
-      "periodo": "2022 — Presente"
-    },
-    "contactoEmail": "lucianogherzonimiranda@gmail.com",
-    "enfoqueHabilidades": [
-      "REACT JS",
-      "NODE.JS",
-      "EXPRESS",
-      "SUPABASE",
-      "C# (.NET)",
-      "GSAP",
-      "JAVASCRIPT",
-      "HTML",
-      "CSS"
-    ]
-  },
   "proyectos": [
-    {
-      "id": "barberia",
-      "año": "2025",
-      "rol": "Barberia ELEVÉ (Tesis)",
-      "empresa": "Plataforma Web Integral",
-      "descripcion": "Desarrollo de una plataforma web con panel de gestión y sistema de turnos, optimizando la administración del negocio.",
-      "tipo": "academico",
-      "tecnologias": ["Node.js", "Express", "Supabase", "MercadoPago (API)"],
-      "url": "https://eleve-barberia.vercel.app/"
-    },
-    {
-      "id": "tarjeta-casamiento",
-      "año": "2025",
-      "rol": "Invitación Digital",
-      "empresa": "Invitación Web Interactiva",
-      "descripcion": "Creación de una tarjeta de invitación web con confirmación de asistencia, facilitando la recopilación de datos (Google Sheets API).",
-      "tipo": "real",
-      "tecnologias": ["Node.js", "Express", "Google Sheets API", "SEO"],
-      "url": "https://demo-invitacion-01.vercel.app/"
-    },
-    {
-      "id": "ciclic",
-      "año": "2025",
-      "rol": "CICLIC",
-      "empresa": "Landing Page con Animaciones",
-      "descripcion": "Diseño y desarrollo de una landing page con animaciones modernas, panel administrador para gestionar contenido dinámico, base de datos Supabase y Google Sheets API para lista de suscriptores.",
-      "tipo": "real",
-      "tecnologias": ["GSAP", "Node.js", "Express", "Supabase", "Google Sheets API"],
-      "url": "https://www.ciclic.ar/"
-    },
     {
       "id": "brcar",
       "año": "2026",
-      "rol": "BRCAR",
-      "empresa": "Landing Page Rentadora de Autos",
-      "descripcion": "Rediseño de landing page para una rentadora de autos en Bariloche, mejorando la experiencia de usuario y diseño visual.",
-      "tipo": "real",
+      "nombre": "BRCAR",
+      "categoria": "Landing page · Rentadora de autos",
+      "descripcion": "Rediseño de landing page para una rentadora de autos en Bariloche, mejorando la experiencia de usuario y el diseño visual.",
+      "tipo": "cliente",
       "tecnologias": ["HTML", "CSS", "JavaScript", "GSAP"],
       "url": "https://brcar-landing.vercel.app/"
     },
     {
-      "id": "duplex-del-este",
-      "año": "2023",
-      "rol": "Duplex del Este",
-      "empresa": "Landing Page Inmobiliaria",
-      "descripcion": "Desarrollo de una landing page para promoción de departamentos, con diseño atractivo y formularios de contacto.",
-      "tipo": "real",
-      "tecnologias": ["HTML", "CSS", "JavaScript"],
-      "url": "https://duplexdeleste.vercel.app/"
-    },
-    {
       "id": "berlini-pastas",
       "año": "2026",
-      "rol": "Berlini Pastas App",
-      "empresa": "Sistema de Pedidos Online",
-      "descripcion": "Desarrollo de una web para pedidos de comida con panel administrador para gestión de productos y stock.",
-      "tipo": "real",
-      "tecnologias": ["React JS", "Node.js", "Express", "Supabase"],
+      "nombre": "Berlini Pastas",
+      "categoria": "Sistema de pedidos online",
+      "descripcion": "Web de pedidos de comida con panel administrador para gestión de productos y stock.",
+      "tipo": "cliente",
+      "tecnologias": ["React", "Node.js", "Express", "Supabase"],
       "url": "https://www.berlinipastas.com/"
     },
     {
       "id": "neloworks",
       "año": "2025",
-      "rol": "NELOWORKS",
-      "empresa": "Tienda Online",
-      "descripcion": "Desarrollo de una tienda online, con integración de MercadoPago y sistema de notificaciones por email.",
-      "tipo": "real",
-      "tecnologias": ["React JS", "Firebase", "Node.js", "MercadoPago"],
+      "nombre": "neloWorks",
+      "categoria": "Tienda online + CMS",
+      "descripcion": "Tienda online con catálogo, carrito, pasarela de pagos, gestión de envíos y notificaciones automáticas de compra, más un panel de administración (CMS) para productos, órdenes y clientes.",
+      "tipo": "cliente",
+      "tecnologias": ["React", "Node.js", "Express", "Firebase", "Mercado Pago API", "Correo Argentino API", "Resend API"],
       "url": "https://neloworks.com/"
     },
     {
-      "id": "kaimiloa",
-      "año": "2023",
-      "rol": "Kaimiloa Resto Bar",
-      "empresa": "Sistema de Pedidos Online",
-      "descripcion": "Desarrollo de una app de pedidos para resto bar en Brasil, con panel administrador para gestión de productos y stock.",
-      "tipo": "real",
-      "tecnologias": ["React JS", "Node.js", "Express", "Supabase"],
-      "url": "https://kaimiloa.vercel.app/"
+      "id": "barberia",
+      "año": "2025",
+      "nombre": "ELEVÉ Barbería",
+      "categoria": "Sistema de turnos · Proyecto de tesis",
+      "descripcion": "Sistema de gestión de turnos y procesos administrativos con notificaciones automáticas por email, implementado en ELEVÉ Barbería para optimizar su agenda.",
+      "tipo": "cliente",
+      "tecnologias": ["Node.js", "Express", "Supabase (PostgreSQL)", "Resend API", "JavaScript"],
+      "url": "https://eleve-barberia.vercel.app/"
+    },
+    {
+      "id": "ciclic",
+      "año": "2025",
+      "nombre": "CICLIC",
+      "categoria": "Landing page + panel de contenido",
+      "descripcion": "Landing page con animaciones, panel administrador para gestionar contenido dinámico y lista de suscriptores integrada con Google Sheets.",
+      "tipo": "cliente",
+      "tecnologias": ["GSAP", "Node.js", "Express", "Supabase", "Google Sheets API"],
+      "url": "https://www.ciclic.ar/",
+      "imagen": "img/proyectos/ciclic.webp"
+    },
+    {
+      "id": "tarjeta-casamiento",
+      "año": "2025",
+      "nombre": "Invitaciones digitales",
+      "categoria": "Bombones para el Alma y otros eventos",
+      "descripcion": "Invitaciones web con confirmación de asistencia y registro automático de invitados.",
+      "tipo": "cliente",
+      "tecnologias": ["Next.js", "Node.js", "Express", "Google Sheets API", "Google Analytics"],
+      "url": "https://demo-invitacion-01.vercel.app/",
+      "imagen": "img/proyectos/tarjeta-casamiento.webp"
     },
     {
       "id": "software-rrhh",
       "año": "2024",
-      "rol": "SOFTWARE RRHH (Backend)",
-      "empresa": "Gestión Educativa",
-      "descripcion": "Lideré el desarrollo del backend de un software de gestión de RRHH en un entorno educativo, logrando un sistema robusto y eficiente.",
+      "nombre": "Software RRHH",
+      "categoria": "Backend · Gestión educativa",
+      "descripcion": "Lideré el desarrollo del backend de un software de gestión de RRHH para un entorno educativo.",
       "tipo": "academico",
-      "tecnologias": ["C#", "Entity Framework", "SQL Lite"]
+      "tecnologias": ["C#", "Entity Framework", "SQLite"]
+    },
+    {
+      "id": "kaimiloa",
+      "año": "2023",
+      "nombre": "Kaimiloa Resto Bar",
+      "categoria": "Sistema de pedidos online",
+      "descripcion": "App de pedidos para un resto bar en Brasil, con panel administrador para gestión de productos y stock.",
+      "tipo": "cliente",
+      "tecnologias": ["React", "Node.js", "Express", "Supabase"],
+      "url": "https://kaimiloa.vercel.app/",
+      "imagen": "img/proyectos/kaimiloa.webp"
+    },
+    {
+      "id": "duplex-del-este",
+      "año": "2023",
+      "nombre": "Duplex del Este",
+      "categoria": "Landing page · Inmobiliaria",
+      "descripcion": "Landing page para la promoción de departamentos en Bariloche, con formularios de contacto.",
+      "tipo": "cliente",
+      "tecnologias": ["HTML", "CSS", "JavaScript"],
+      "url": "https://duplexdeleste.vercel.app/",
+      "imagen": "img/proyectos/duplex-del-este.webp"
     }
+  ],
+  "stack": [
+    { "grupo": "Frontend", "items": ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind", "HTML", "CSS"] },
+    { "grupo": "Backend", "items": ["Node.js", "Express", "C# (.NET)", "Java"] },
+    { "grupo": "Datos", "items": ["PostgreSQL", "Supabase", "Firebase", "MongoDB", "SQL"] },
+    { "grupo": "Herramientas", "items": ["Git / GitHub", "Vercel", "Figma", "Google Analytics"] },
+    { "grupo": "Análisis y gestión", "items": ["Relevamiento de requerimientos", "SRS", "Historias de usuario", "UML", "Scrum", "Jira", "Trello"] }
   ],
   "estudios": [
     {
+      "titulo": "Licenciatura en Inteligencia Artificial",
+      "institucion": "Universidad Blas Pascal",
+      "periodo": "2026 — Actualidad",
+      "descripcion": "Cursando el segundo de tres semestres. Egreso previsto: 2027."
+    },
+    {
       "titulo": "Analista de Sistemas y Desarrollo de Software",
-      "institucion": "IES SIGLO 21",
-      "periodo": "2023 - 2025",
+      "institucion": "IES Siglo 21",
+      "periodo": "2023 — 2025",
       "descripcion": "Formación integral en análisis, diseño y desarrollo de software."
     },
     {
       "titulo": "Desarrollador Full Stack",
-      "institucion": "CODERHOUSE",
-      "periodo": "2022 - 2023",
-      "descripcion": "Certificación enfocada en tecnologías web modernas (Frontend y Backend)."
+      "institucion": "Coderhouse",
+      "periodo": "2022 — 2023",
+      "descripcion": "Certificación enfocada en tecnologías web modernas (frontend y backend)."
     }
   ]
 }
