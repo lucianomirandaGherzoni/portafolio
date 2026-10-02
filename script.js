@@ -1,6 +1,6 @@
 // ==========================================================================
 // Módulo: GestorDatos
-// Carga datos.json y renderiza proyectos, stack y formación.
+// Carga datos.json y renderiza proyectos, tecnologías y formación.
 // ==========================================================================
 const GestorDatos = (() => {
   const urlDatos = 'datos.json';
@@ -23,19 +23,6 @@ const GestorDatos = (() => {
       console.error('Error al obtener los datos:', error);
       return { proyectos: [], stack: [], estudios: [] };
     }
-  };
-
-  const crearImagenProyecto = (proyecto) => {
-    if (proyecto.imagen) {
-      return `
-        <figure class="imagen-trabajo">
-          <img src="${escaparHtml(proyecto.imagen)}" alt="Captura del sitio de ${escaparHtml(proyecto.nombre)}" width="960" height="600" loading="lazy" decoding="async">
-        </figure>`;
-    }
-    return `
-      <figure class="imagen-trabajo sin-imagen" aria-hidden="true">
-        <span>${escaparHtml(proyecto.nombre)}</span>
-      </figure>`;
   };
 
   const crearItemProyecto = (proyecto) => {
@@ -61,7 +48,6 @@ const GestorDatos = (() => {
         <ul class="tecnologias-trabajo" aria-label="Tecnologías">${etiquetas}</ul>
         ${botonProyecto}
       </div>
-      ${crearImagenProyecto(proyecto)}
     `;
     return articulo;
   };
@@ -126,10 +112,10 @@ const GestorDatos = (() => {
     if (!contenedor) return;
 
     contenedor.innerHTML = grupos.map((g) => `
-      <div class="grupo-stack">
+      <div class="fila-stack">
         <h3 class="titulo-grupo-stack">${escaparHtml(g.grupo)}</h3>
         <ul class="lista-stack">
-          ${g.items.map((item) => `<li class="etiqueta-habilidad">${escaparHtml(item)}</li>`).join('')}
+          ${g.items.map((item) => `<li>${escaparHtml(item)}</li>`).join('')}
         </ul>
       </div>
     `).join('');

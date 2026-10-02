@@ -48,8 +48,7 @@
       "descripcion": "Landing page con animaciones, panel administrador para gestionar contenido dinámico y lista de suscriptores integrada con Google Sheets.",
       "tipo": "cliente",
       "tecnologias": ["GSAP", "Node.js", "Express", "Supabase", "Google Sheets API"],
-      "url": "https://www.ciclic.ar/",
-      "imagen": "img/proyectos/ciclic.webp"
+      "url": "https://www.ciclic.ar/"
     },
     {
       "id": "tarjeta-casamiento",
@@ -59,8 +58,7 @@
       "descripcion": "Invitaciones web con confirmación de asistencia y registro automático de invitados.",
       "tipo": "cliente",
       "tecnologias": ["Next.js", "Node.js", "Express", "Google Sheets API", "Google Analytics"],
-      "url": "https://demo-invitacion-01.vercel.app/",
-      "imagen": "img/proyectos/tarjeta-casamiento.webp"
+      "url": "https://demo-invitacion-01.vercel.app/"
     },
     {
       "id": "software-rrhh",
@@ -79,8 +77,7 @@
       "descripcion": "App de pedidos para un resto bar en Brasil, con panel administrador para gestión de productos y stock.",
       "tipo": "cliente",
       "tecnologias": ["React", "Node.js", "Express", "Supabase"],
-      "url": "https://kaimiloa.vercel.app/",
-      "imagen": "img/proyectos/kaimiloa.webp"
+      "url": "https://kaimiloa.vercel.app/"
     },
     {
       "id": "duplex-del-este",
@@ -90,8 +87,7 @@
       "descripcion": "Landing page para la promoción de departamentos en Bariloche, con formularios de contacto.",
       "tipo": "cliente",
       "tecnologias": ["HTML", "CSS", "JavaScript"],
-      "url": "https://duplexdeleste.vercel.app/",
-      "imagen": "img/proyectos/duplex-del-este.webp"
+      "url": "https://duplexdeleste.vercel.app/"
     }
   ],
   "stack": [
