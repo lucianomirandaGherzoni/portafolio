@@ -59,12 +59,19 @@
       </button>
 
       <nav class="enlaces-navegacion" id="menuNavegacion" aria-label="Principal">
-        <a href="#trabajo" class="enlace-nav">Proyectos</a>
-        <a href="#acerca" class="enlace-nav">Sobre mí</a>
-        <a href="#tecnologias" class="enlace-nav">Tecnologías</a>
-        <a href="#estudios" class="enlace-nav">Formación</a>
-        <a href="#contacto" class="enlace-nav">Contacto</a>
-        <a href="https://drive.google.com/drive/folders/1d3MZshHaQlaf7J0WL3StgxmL0PpLqV1T?usp=drive_link" target="_blank" rel="noopener noreferrer" class="enlace-nav enlace-nav-cv">CV ↗</a>
+        <a href="#introduccion" class="enlace-nav" style="--i:0"><span class="texto-enlace">Inicio</span><i class="punto-nav" aria-hidden="true"></i></a>
+        <a href="#trabajo" class="enlace-nav" style="--i:1"><span class="texto-enlace">Proyectos</span><i class="punto-nav" aria-hidden="true"></i></a>
+        <a href="#acerca" class="enlace-nav" style="--i:2"><span class="texto-enlace">Sobre mí</span><i class="punto-nav" aria-hidden="true"></i></a>
+        <a href="#tecnologias" class="enlace-nav" style="--i:3"><span class="texto-enlace">Tecnologías</span><i class="punto-nav" aria-hidden="true"></i></a>
+        <a href="#estudios" class="enlace-nav" style="--i:4"><span class="texto-enlace">Formación</span><i class="punto-nav" aria-hidden="true"></i></a>
+        <a href="#contacto" class="enlace-nav" style="--i:5"><span class="texto-enlace">Contacto</span><i class="punto-nav" aria-hidden="true"></i></a>
+        <a href="https://drive.google.com/drive/folders/1d3MZshHaQlaf7J0WL3StgxmL0PpLqV1T?usp=drive_link" target="_blank" rel="noopener noreferrer" class="enlace-nav enlace-nav-cv" style="--i:6"><span class="texto-enlace">CV</span><span class="flecha-nav" aria-hidden="true">↗</span></a>
+
+        <div class="pie-menu">
+          <p class="estado-menu"><span class="punto-estado" aria-hidden="true"></span>Disponible para trabajar</p>
+          <a href="mailto:lucianomirandagherzoni@gmail.com" class="dato-menu">lucianomirandagherzoni@gmail.com</a>
+          <a href="https://wa.me/542944134510?text=Hola%20Luciano%2C%20vengo%20desde%20tu%20portafolio!" target="_blank" rel="noopener noreferrer" class="dato-menu dato-menu-mutado">(+54) 2944134510</a>
+        </div>
       </nav>
     </div>
   </header>
@@ -151,9 +158,15 @@
       </div>
 
       <div class="contenido-acerca">
-        <img src="img/perfil.jpeg" alt="Retrato de Luciano Miranda" class="foto-perfil" width="240" height="240" loading="lazy">
+        <div class="perfil-acerca">
+          <img src="img/perfil.jpeg" alt="Retrato de Luciano Miranda" class="foto-perfil" width="240" height="240" loading="lazy">
+          <div class="datos-perfil">
+            <p class="nombre-perfil">Luciano Miranda</p>
+            <p class="rol-perfil">Analista en Sistemas · Full Stack</p>
+          </div>
+        </div>
         <p class="texto-acerca">
-          Analista en Sistemas y desarrollador de software, actualmente cursando la Licenciatura en Inteligencia Artificial en la Universidad Blas Pascal. Desde 2024 desarrollo proyectos como freelance. Me motiva aprender constantemente nuevas tecnologías y participar en proyectos desafiantes. Busco experiencias que me permitan seguir creciendo profesionalmente.
+          <span class="solo-desktop">Analista en Sistemas y desarrollador de software, actualmente cursando</span><span class="solo-mobile">Actualmente cursando</span> la Licenciatura en Inteligencia Artificial en la Universidad Blas Pascal. Desde 2024 desarrollo proyectos como freelance. Me motiva aprender constantemente nuevas tecnologías y participar en proyectos desafiantes. Busco experiencias que me permitan seguir creciendo profesionalmente.
         </p>
       </div>
     </section>

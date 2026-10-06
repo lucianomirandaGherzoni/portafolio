@@ -61,6 +61,15 @@
       "url": "https://demo-invitacion-01.vercel.app/"
     },
     {
+      "id": "ecotransporte",
+      "año": "2025",
+      "nombre": "Ecotransporte",
+      "categoria": "MVP y propuesta · Proyecto académico",
+      "descripcion": "Relevamiento, planificación, diseño y prototipo de un MVP para la empresa Ecotransporte, junto con la propuesta de solución.",
+      "tipo": "academico",
+      "tecnologias": ["Figma", "UML", "Scrum", "Jira"]
+    },
+    {
       "id": "software-rrhh",
       "año": "2024",
       "nombre": "Software RRHH",
@@ -91,11 +100,9 @@
     }
   ],
   "stack": [
-    { "grupo": "Frontend", "items": ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind", "HTML", "CSS"] },
-    { "grupo": "Backend", "items": ["Node.js", "Express", "C# (.NET)", "Java"] },
-    { "grupo": "Datos", "items": ["PostgreSQL", "Supabase", "Firebase", "MongoDB", "SQL"] },
-    { "grupo": "Herramientas", "items": ["Git / GitHub", "Vercel", "Figma", "Google Analytics"] },
-    { "grupo": "Análisis y gestión", "items": ["Relevamiento de requerimientos", "SRS", "Historias de usuario", "UML", "Scrum", "Jira", "Trello"] }
+    { "grupo": "Tecnologías", "items": ["JavaScript", "TypeScript", "HTML", "CSS", "React", "Next.js", "Tailwind", "Node.js", "Express", "C# (.NET)", "Java", "SQL", "PostgreSQL", "Supabase", "Firebase", "MongoDB"] },
+    { "grupo": "Herramientas", "items": ["Git / GitHub", "Vercel", "Figma", "Google Analytics", "Jira", "Trello"] },
+    { "grupo": "Análisis y gestión", "items": ["Relevamiento de requerimientos", "SRS", "Historias de usuario", "Gestión de backlog", "UML", "Scrum"] }
   ],
   "estudios": [
     {

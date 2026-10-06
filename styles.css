@@ -9,6 +9,7 @@
   --texto-mutado: oklch(0.5 0 0);
   --borde: oklch(0.9 0 0);
   --borde-fuerte: oklch(0.75 0 0);
+  --gris-menu: oklch(0.64 0 0);
   --grilla-color: rgba(0, 0, 0, 0.12);
   --verde: #22c55e;
   --whatsapp: #25d366;
@@ -67,6 +68,11 @@ body::before {
 img {
   display: block;
   max-width: 100%;
+}
+
+/* Sin esto, cualquier clase con display (ej. .boton) le gana al atributo hidden */
+[hidden] {
+  display: none !important;
 }
 
 ul {
@@ -280,14 +286,19 @@ button {
   gap: 6px;
   width: 2.75rem;
   height: 2.75rem;
-  margin-right: -0.625rem;
-  background: none;
-  border: none;
+  background-color: var(--fondo);
+  border: 1px solid var(--borde);
+  border-radius: 50%;
   cursor: pointer;
+  transition: border-color var(--duracion), background-color var(--duracion);
+}
+
+.boton-menu:hover {
+  border-color: var(--texto-principal);
 }
 
 .linea-menu {
-  width: 1.25rem;
+  width: 1.125rem;
   height: 1.5px;
   background-color: var(--texto-principal);
   transition: transform var(--duracion);
@@ -301,42 +312,154 @@ button {
   transform: translateY(-3.75px) rotate(-45deg);
 }
 
+/* Menú a pantalla completa en todos los anchos: el logo y el botón quedan por encima del panel */
+.logo-navegacion,
+.boton-menu {
+  position: relative;
+  z-index: 1;
+}
+
 .enlaces-navegacion {
-  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  padding: calc(var(--alto-navegacion) + 1.25rem) var(--margen-lateral) calc(1.5rem + env(safe-area-inset-bottom, 0px));
+  overflow-y: auto;
+  background-color: var(--fondo);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 250ms, visibility 0s 350ms;
+}
+
+.enlaces-navegacion::before {
+  content: '';
   position: absolute;
-  top: 100%;
+  top: var(--alto-navegacion);
   left: 0;
   right: 0;
-  flex-direction: column;
-  padding: 0.5rem var(--margen-lateral) 1rem;
-  background-color: var(--fondo);
-  border-bottom: 1px solid var(--borde);
+  border-top: 1px solid var(--borde);
 }
 
 .enlaces-navegacion.abierto {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 250ms;
 }
 
 .enlace-nav {
   display: flex;
   align-items: center;
-  min-height: 3rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--texto-mutado);
-  text-decoration: none;
+  justify-content: space-between;
+  gap: 0.75rem;
+  overflow: hidden;
+  padding: 0.75rem 0 0.625rem;
   border-bottom: 1px solid var(--borde);
+  font-size: clamp(1.875rem, min(10vw, 6.5vh), 3rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--texto-principal);
   transition: color var(--duracion);
-}
-
-.enlace-nav:last-child {
-  border-bottom: none;
 }
 
 .enlace-nav:hover {
   color: var(--texto-principal);
+}
+
+.texto-enlace,
+.flecha-nav {
+  display: block;
+  transform: translateY(110%);
+  transition: transform 450ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-delay: calc(var(--i) * 45ms);
+}
+
+.abierto .texto-enlace,
+.abierto .flecha-nav {
+  transform: none;
+  transition-delay: calc(100ms + var(--i) * 45ms);
+}
+
+.flecha-nav {
+  margin-left: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--texto-mutado);
+}
+
+/* Con una sección activa, el resto pasa a gris (3.2:1, AA para texto grande) */
+.enlaces-navegacion.con-activa .enlace-nav {
+  color: var(--gris-menu);
+}
+
+.enlaces-navegacion.con-activa .enlace-nav[aria-current="location"],
+.enlaces-navegacion.con-activa .enlace-nav:hover,
+.enlace-nav:active {
+  color: var(--texto-principal);
+}
+
+.punto-nav {
+  display: block;
+  flex: none;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--texto-principal);
+  transform: scale(0);
+  transition: transform 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.abierto .enlace-nav[aria-current="location"] .punto-nav {
+  transform: scale(1);
+  transition-delay: calc(350ms + var(--i) * 45ms);
+}
+
+.pie-menu {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  padding-top: 2rem;
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.abierto .pie-menu {
+  opacity: 1;
+  transition-delay: 400ms;
+}
+
+.estado-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--texto-mutado);
+}
+
+.dato-menu {
+  display: flex;
+  align-items: center;
+  min-height: 2.75rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.dato-menu-mutado {
+  font-weight: 400;
+  color: var(--texto-mutado);
+}
+
+.menu-abierto,
+.menu-abierto body {
+  overflow: hidden;
 }
 
 /* ==========================================================================
@@ -607,15 +730,35 @@ button {
 .contenido-acerca {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
+}
+
+/* En mobile la foto va como tarjeta de perfil con nombre y rol; en desktop solo se ve la foto */
+.perfil-acerca {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--borde);
 }
 
 .foto-perfil {
-  width: 7.5rem;
-  height: 7.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  flex-shrink: 0;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid var(--borde);
+}
+
+.nombre-perfil {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.rol-perfil {
+  font-size: 0.875rem;
+  color: var(--texto-mutado);
 }
 
 .texto-acerca {
@@ -623,6 +766,10 @@ button {
   line-height: 1.8;
   color: var(--texto-mutado);
   max-width: 42rem;
+}
+
+.solo-desktop {
+  display: none;
 }
 
 /* ==========================================================================
@@ -923,40 +1070,33 @@ button {
 }
 
 @media (min-width: 768px) {
-  .boton-menu {
-    display: none;
+  .enlaces-navegacion {
+    align-items: center;
+    padding-top: calc(var(--alto-navegacion) + 2rem);
   }
 
-  .enlaces-navegacion,
-  .enlaces-navegacion.abierto {
-    display: flex;
-    position: static;
-    flex-direction: row;
-    align-items: center;
-    gap: 1.75rem;
-    padding: 0;
-    border: none;
-    background: none;
+  .enlace-nav,
+  .pie-menu {
+    width: min(100%, 44rem);
   }
 
   .enlace-nav {
-    min-height: 2.75rem;
-    border-bottom: none;
-    font-size: 0.8125rem;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.875rem 0 0.75rem;
+    font-size: clamp(2.5rem, 7.5vh, 4.25rem);
   }
 
-  .enlace-nav-cv {
-    padding: 0 0.875rem;
-    min-height: 2.25rem;
-    border: 1px solid var(--borde);
-    border-radius: var(--radio);
-    color: var(--texto-principal);
-    transition: border-color var(--duracion), background-color var(--duracion);
+  .pie-menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2rem;
   }
 
-  .enlace-nav-cv:hover {
-    border-color: var(--texto-principal);
-    background-color: var(--fondo-secundario);
+  .estado-menu {
+    margin-bottom: 0;
   }
 
   .contenido-acerca {
@@ -966,11 +1106,26 @@ button {
     gap: 4rem;
   }
 
-  .foto-perfil {
+  .perfil-acerca {
     order: 2;
+    flex-shrink: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .datos-perfil,
+  .solo-mobile {
+    display: none;
+  }
+
+  .solo-desktop {
+    display: inline;
+  }
+
+  .foto-perfil {
     width: 15rem;
     height: 15rem;
-    flex-shrink: 0;
+    border: 4px solid var(--borde);
   }
 
   .texto-acerca {

@@ -71,7 +71,7 @@ const GestorDatos = (() => {
     visibles.forEach((p) => lista.appendChild(crearItemProyecto(p)));
 
     if (botonVerMas) {
-      const restantes = filtrados.length - proyectosIniciales;
+      const restantes = Math.max(0, filtrados.length - proyectosIniciales);
       botonVerMas.hidden = restantes <= 0;
       botonVerMas.textContent = mostrarTodos ? 'Ver menos' : `Ver ${restantes} proyectos más`;
       botonVerMas.setAttribute('aria-expanded', String(mostrarTodos));
@@ -152,16 +152,39 @@ const GestorDatos = (() => {
 
 // ==========================================================================
 // Módulo: GestorMenu
-// Menú desplegable en mobile.
+// Menú a pantalla completa; marca la sección en la que está el usuario.
 // ==========================================================================
 const GestorMenu = (() => {
   const boton = document.getElementById('botonMenu');
   const menu = document.getElementById('menuNavegacion');
+  const idsSecciones = ['introduccion', 'trabajo', 'acerca', 'tecnologias', 'estudios', 'contacto'];
+  const fondoInerte = ['contenido', 'botonWhatsappFlotante'].map((id) => document.getElementById(id));
+
+  const marcarSeccionActiva = () => {
+    const secciones = idsSecciones.map((id) => document.getElementById(id)).filter(Boolean);
+    const linea = window.innerHeight * 0.4;
+    let activa = null;
+
+    secciones.forEach((seccion) => {
+      if (seccion.getBoundingClientRect().top <= linea) activa = seccion.id;
+    });
+    const alFinal = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+    if (alFinal && secciones.length) activa = secciones[secciones.length - 1].id;
+
+    menu.querySelectorAll('.enlace-nav[href^="#"]').forEach((enlace) => {
+      if (enlace.hash.slice(1) === activa) enlace.setAttribute('aria-current', 'location');
+      else enlace.removeAttribute('aria-current');
+    });
+    menu.classList.toggle('con-activa', Boolean(activa));
+  };
 
   const cambiarEstado = (abrir) => {
+    if (abrir) marcarSeccionActiva();
     boton.setAttribute('aria-expanded', String(abrir));
     boton.setAttribute('aria-label', abrir ? 'Cerrar menú' : 'Abrir menú');
     menu.classList.toggle('abierto', abrir);
+    document.documentElement.classList.toggle('menu-abierto', abrir);
+    fondoInerte.forEach((el) => { if (el) el.inert = abrir; });
   };
 
   const init = () => {
